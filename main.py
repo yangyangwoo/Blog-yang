@@ -190,7 +190,7 @@ def edit_post(post_id):
     edit_form = CreatePostForm(
         title=post.title,
         subtitle=post.subtitle,
-        author=post.author_id,
+        author=post.parent_author_id,
         body=post.body,
         img_url=post.img_url
     )
