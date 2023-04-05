@@ -1,4 +1,5 @@
 import datetime
+import os
 
 from flask import Flask, render_template, redirect, url_for, request, flash, abort
 from flask_bootstrap import Bootstrap
@@ -246,4 +247,4 @@ def contact():
     return render_template("contact.html", logged_in=current_user.is_authenticated)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=33507)
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT')))
