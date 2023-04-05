@@ -8,7 +8,7 @@ class RegistertForm(FlaskForm):
     email = StringField(label="Email", validators=[DataRequired()])
     password = PasswordField(label='Password', validators=[DataRequired()])
     name = StringField(label="Name", validators=[DataRequired()])
-    submit = SubmitField(label="Submit Post")
+    submit = SubmitField(label="Sign Me Up!")
 
 class CreatePostForm(FlaskForm):
     title = StringField("Blog Post Title", validators=[DataRequired()])
