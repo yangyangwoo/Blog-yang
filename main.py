@@ -246,4 +246,4 @@ def contact():
     return render_template("contact.html", logged_in=current_user.is_authenticated)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=36584)
+    app.run(debug=True)
