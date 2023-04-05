@@ -94,9 +94,9 @@ def admin_only(func):
     return decorated_function
 
 
-# @app.before_request
-# def create_table():
-#     db.create_all()
+@app.before_request
+def create_table():
+    db.create_all()
 
 
 @login_manager.user_loader
@@ -197,7 +197,7 @@ def edit_post(post_id):
     if edit_form.validate_on_submit():
         post.title = edit_form.title.data
         post.subtitle = request.form.get('subtitle')
-        post.parent_author = current_user
+        # post.parent_author = current_user
         post.body = request.form.get('body')
         post.img_url = request.form.get('img_url')
         db.session.commit()
