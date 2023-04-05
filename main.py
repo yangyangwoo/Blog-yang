@@ -182,7 +182,7 @@ def show_post(index):
 
 
 @app.route("/edit/<int:post_id>", methods=['POST', 'GET'])
-@admin_only
+# @admin_only
 def edit_post(post_id):
     post = BlogPost.query.get(post_id)
     # pre-fill a form using Flask and WTForms by passing initial data to the form constructor.
@@ -206,7 +206,7 @@ def edit_post(post_id):
 
 
 @app.route('/new-post', methods=['POST', 'GET'])
-@admin_only
+# @admin_only
 def make_post():
     form = CreatePostForm(author=current_user.id)
     if request.method == 'POST':
@@ -228,7 +228,7 @@ def make_post():
 
 
 @app.route('/delete/<int:post_id>')
-@admin_only
+# @admin_only
 def delete_post(post_id):
     post = BlogPost.query.get(post_id)
     db.session.delete(post)
